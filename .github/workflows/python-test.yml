@@ -22,8 +22,10 @@ jobs:
           source $HOME/.poetry/env
           export PATH="$HOME/.poetry/bin:$PATH"
           poetry --version
+          ls -lahF
       - name: Install dependencies
         run: |
+          ls -lahF
           poetry --version
           make clean
           make setup
