@@ -19,25 +19,18 @@ jobs:
       - name: Install poetry
         run: |
           curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-          source $HOME/.poetry/env
           export PATH="$HOME/.poetry/bin:$PATH"
           poetry --version
-          pwd
-          ls -lahF
-          ls -lahF $HOME/.poetry/bin
-          cat $HOME/.poetry/env
       - name: Install dependencies
         run: |
-          pwd
-          ls -lahF
-          ls -lahF $HOME/.poetry/bin
-          cat $HOME/.poetry/env
-          poetry --version
+          export PATH="$HOME/.poetry/bin:$PATH"
           make clean
           make setup
       - name: Check type
         run: |
+          export PATH="$HOME/.poetry/bin:$PATH"
           make type
       - name: Test
         run: |
+          export PATH="$HOME/.poetry/bin:$PATH"
           make test
