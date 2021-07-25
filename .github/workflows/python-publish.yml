@@ -5,7 +5,7 @@ on:
     types: [published]
 
 env:
-  PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+  POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
 
 jobs:
   publish:
@@ -43,5 +43,4 @@ jobs:
       - name: Publish
         run: |
           export PATH="$HOME/.poetry/bin:$PATH"
-          poetry config pypi-token.pypi ${{ env.PYPI_TOKEN }}
           make publish
