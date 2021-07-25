@@ -23,6 +23,7 @@ jobs:
           poetry --version
       - name: Install dependencies
         run: |
+          poetry --version
           make clean
           make setup
       - name: Check type
