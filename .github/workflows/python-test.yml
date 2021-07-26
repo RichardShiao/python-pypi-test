@@ -26,6 +26,10 @@ jobs:
           export PATH="$HOME/.poetry/bin:$PATH"
           make clean
           make setup
+      - name: Check format
+        run: |
+          export PATH="$HOME/.poetry/bin:$PATH"
+          poetry run black --check .
       - name: Check type
         run: |
           export PATH="$HOME/.poetry/bin:$PATH"
